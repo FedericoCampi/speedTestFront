@@ -123,12 +123,12 @@ export default function FuturisticSpeedTest() {
 
     const response = await axios.get(process.env.NEXT_PUBLIC_FAST_TEST_URL!);
 
-    const { downloadSpeed, uploadSpeed, latency } = response.data;
+    const { downloadSpeed, uploadSpeed } = response.data;
 
     // Asigna los valores a los estados correspondientes
     setDownloadSpeed(downloadSpeed)
     setUploadSpeed(uploadSpeed)
-    setPing(latency)
+    setPing(2)
     setIsLoading(false)
   }
 
