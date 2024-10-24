@@ -122,13 +122,15 @@ export default function FuturisticSpeedTest() {
     await new Promise(resolve => setTimeout(resolve, 3000))
 
     const response = await axios.get(process.env.NEXT_PUBLIC_FAST_TEST_URL!);
-
     const { downloadSpeed, uploadSpeed } = response.data;
 
+    const responsePing = await axios.get(process.env.NEXT_PUBLIC_FAST_TEST_URL_PING!);
+    const { time } = responsePing.data;
+    
     // Asigna los valores a los estados correspondientes
     setDownloadSpeed(downloadSpeed)
     setUploadSpeed(uploadSpeed)
-    setPing(2)
+    setPing(time)
     setIsLoading(false)
   }
 
