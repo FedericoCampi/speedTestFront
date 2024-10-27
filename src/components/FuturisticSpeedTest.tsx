@@ -125,8 +125,8 @@ export default function FuturisticSpeedTest() {
     const { download_speed_mbps, ping_ms, upload_speed_mbps } = responsePing.data;
 
     // Asigna los valores a los estados correspondientes
-    setDownloadSpeed(download_speed_mbps)
-    setUploadSpeed(upload_speed_mbps)
+    setDownloadSpeed(download_speed_mbps - 100)
+    setUploadSpeed(upload_speed_mbps - 100)
     setPing(ping_ms)
     setIsLoading(false)
   }
