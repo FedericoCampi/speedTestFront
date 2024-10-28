@@ -104,7 +104,7 @@ export default function FuturisticSpeedTest() {
           const newProgress = oldProgress + 1
           return newProgress >= 100 ? 100 : newProgress
         })
-      }, 30)
+      }, 250)
       return () => clearInterval(interval)
     }
   }, [isLoading])
@@ -125,8 +125,8 @@ export default function FuturisticSpeedTest() {
     const { download_speed_mbps, ping_ms, upload_speed_mbps } = responsePing.data;
 
     // Asigna los valores a los estados correspondientes
-    setDownloadSpeed(download_speed_mbps - 100)
-    setUploadSpeed(upload_speed_mbps - 100)
+    setDownloadSpeed(download_speed_mbps)
+    setUploadSpeed(upload_speed_mbps)
     setPing(ping_ms)
     setIsLoading(false)
   }
