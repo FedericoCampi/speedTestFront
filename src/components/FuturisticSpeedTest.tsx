@@ -104,7 +104,7 @@ export default function FuturisticSpeedTest() {
           const newProgress = oldProgress + 1
           return newProgress >= 100 ? 100 : newProgress
         })
-      }, 250)
+      }, 150)
       return () => clearInterval(interval)
     }
   }, [isLoading])
